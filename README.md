@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# stg-catalog-challenge
+Sistema completo de e-commerce com autenticação, catálogo, carrinho, histórico de pedidos e finalização via WhatsApp, construído com Next.js, TypeScript, Tailwind CSS e Supabase.
 
-First, run the development server:
+# Funcionalidades
+- Autenticação com email (login/registro/proteção de rotas/logout)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Catálogo responsivo com busca e filtro por categoria
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Visualização detalhada de produtos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Carrinho com edição de quantidade, remoção e finalização via WhatsApp
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Histórico de pedidos salvo no Supabase
 
-## Learn More
+- Interface moderna com tema vidro (glassmorphism) e responsividade
 
-To learn more about Next.js, take a look at the following resources:
+- Mensagem formatada e link automático para WhatsApp no checkout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Tecnologias Utilizadas
+- Next.js + React + TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Tailwind CSS
 
-## Deploy on Vercel
+- Supabase (Auth, Database, Storage)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- WhatsApp API (link wa.me)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- IA para acelerar o desenvolvimento (ex: ChatGPT)
+
+- IA Utilizada:
+Utilizei o ChatGPT para auxiliar na lógica e no direcionamento do design, com foco especial na lógica do carrinho e na resolução de erros via logs. Além disso, o ChatGPT me ajudou a criar os produtos, fornecendo todas as informações necessárias, incluindo imagens.
+
+# Links
+
+
+Deploy funcionando: [https://stg-catalog-challenge-delta.vercel.app/]
+
+# Observações
+O pagamento é simulado; a finalização acontece via WhatsApp.
+
+
+## Variáveis de Ambiente
+
+# Instale as dependências: npm install
+
+- Configure variáveis de ambiente para o Supabase (NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY)
+
+- Rode o projeto: 
+  `npm run dev`
+
+Acesse no navegador: `http://localhost:3000`
+
+
+
