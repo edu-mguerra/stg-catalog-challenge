@@ -31,7 +31,8 @@ export default function Registration() {
       return;
     }
 
-    alert('Conta criada! Verifique seu e-mail para confirmar.');
+   alert('Conta criada! Entre no seu Gmail e procure o e-mail de confirmação para ativar sua conta.');
+   
   }
 
 
