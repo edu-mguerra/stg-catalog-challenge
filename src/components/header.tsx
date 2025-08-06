@@ -40,14 +40,14 @@ export const Header = () => {
 
   };
   useEffect(() => {
-    
+
     const intervalId = setInterval(() => {
       fetchCartItems();
-      
+
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []);
 
 
 
@@ -65,7 +65,14 @@ export const Header = () => {
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Abrir menu"
       >
-        <FontAwesomeIcon icon={faBars} size="lg" />
+        <div className="flex">
+          <FontAwesomeIcon icon={faBars} size="lg" />
+          {cartCount > 0 && (
+            <span className="text-black font-bold  bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              {cartCount}
+            </span>
+          )}
+        </div>
       </button>
 
       <nav
@@ -74,7 +81,7 @@ export const Header = () => {
       >
         <Link
           href="/catalog"
-          className="block py-2 md:py-0 hover:text-sky-400 hover:scale-[1.02] transition"
+          className="text-black font-bold  block py-2 md:py-0 hover:text-sky-400 hover:scale-[1.02] transition"
           onClick={() => setMenuOpen(false)}
         >
           Produtos
@@ -82,16 +89,18 @@ export const Header = () => {
 
         <Link
           href="/cart"
-          className="block py-2 md:py-0 flex items-center gap-2 hover:text-sky-400 hover:scale-[1.02] transition relative"
+          className="text-black font-bold  block py-2 md:py-0 flex items-center gap-2 hover:text-sky-400 hover:scale-[1.02] transition relative"
           onClick={() => setMenuOpen(false)}
         >
-          <FontAwesomeIcon icon={faCartShopping} />
           <span>Carrinho</span>
+          <FontAwesomeIcon icon={faCartShopping} />
+
           {cartCount > 0 && (
-            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="text-black font-bold  absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
               {cartCount}
             </span>
           )}
+
         </Link>
 
         <Link

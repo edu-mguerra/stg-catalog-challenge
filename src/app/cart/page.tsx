@@ -73,7 +73,10 @@ export default function CartPage() {
 
 
   const handleWhatsAppCheckout = async () => {
-    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
 
     if (userError || !user) {
       alert("Usuário não autenticado");
@@ -82,12 +85,21 @@ export default function CartPage() {
 
     const phone = "558792020340";
 
-    const message = `📦 NOVO PEDIDO - STG CATALOG\n\n${cartItems
-      .map(
-        (item) =>
-          `- ${item.products.name} - Qtd: ${item.quantity} - R$ ${(item.products.price * item.quantity).toFixed(2)}`
-      )
-      .join("\n")}\n\n🧾 TOTAL: R$ ${total.toFixed(2)}\n\nPedido via STG Catalog`;
+    const message = `🛒 NOVO PEDIDO - STG CATALOG
+👤 Cliente: ${user.user_metadata?.name || user.email }
+📧 Email: ${user.email}
+
+📦 PRODUTOS:
+${cartItems
+        .map(
+          (item) =>
+            `- ${item.products.name} - Qtd: ${item.quantity} - R$ ${(item.products.price * item.quantity).toFixed(2)}`
+        )
+        .join("\n")}
+
+🧾 TOTAL: R$ ${total.toFixed(2)}
+---
+Pedido via STG Catalog`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
@@ -100,6 +112,7 @@ export default function CartPage() {
       console.error("Erro ao limpar carrinho:", error);
     }
   };
+
 
 
   return (
