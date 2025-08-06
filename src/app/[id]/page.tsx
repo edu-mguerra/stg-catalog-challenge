@@ -23,6 +23,19 @@ export default function ProductPage({ params }: PropsType) {
     const [products, setProducts] = useState<any[]>([])
     const [categories, setCategories] = useState<string[]>([]);
     const [loading, setLoading] = useState(true)
+    const [isAdding, setIsAdding] = useState(false);
+
+    const handleAddToCart = async (productId: string) => {
+        setIsAdding(true);
+        console.log("Cliquei no botão - product.id:", productId);
+        await addToCart(productId);
+
+        setTimeout(() => {
+            
+            setIsAdding(false);
+        }, 1000);
+    };
+
 
 
 
@@ -91,15 +104,16 @@ export default function ProductPage({ params }: PropsType) {
                         </p>
 
                         <button
-                            onClick={() => {
-                                console.log("Cliquei no botão - product.id:", product.id);
-                                addToCart(product.id);
-
-                            }}
-                            className="bg-white  text-sky-500 font-bold  px-4 py-2 rounded transition"
+                            onClick={() => handleAddToCart(product.id)}
+                            className="bg-white text-sky-500 font-bold px-4 py-2 rounded transition"
+                            disabled={isAdding}
                         >
-                            Adicionar ao carrinho
+                            {isAdding ? "Adicionando..." : "Adicionar ao carrinho"}
                         </button>
+
+                        {isAdding && (
+                            <p className="text-white mt-2 text-sm">Adicionando ao carrinho...</p>
+                        )}
                     </div>
                 </div>
 
