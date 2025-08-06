@@ -86,7 +86,7 @@ export default function CartPage() {
     const phone = "558792020340";
 
     const message = `🛒 NOVO PEDIDO - STG CATALOG
-👤 Cliente: ${user.user_metadata?.name || user.email }
+👤 Cliente: ${user.user_metadata?.name || user.email}
 📧 Email: ${user.email}
 
 📦 PRODUTOS:
@@ -106,11 +106,18 @@ Pedido via STG Catalog`;
 
     window.open(whatsappUrl, "_blank");
 
-    const { error } = await supabase.from("cart_items").delete().eq("user_id", user.id);
+    const { error } = await supabase
+      .from("cart_items")
+      .delete()
+      .eq("user_id", user.id);
 
     if (error) {
       console.error("Erro ao limpar carrinho:", error);
+    } else {
+      
+      fetchCartItems(); 
     }
+
   };
 
 

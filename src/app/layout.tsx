@@ -1,4 +1,5 @@
 import { CartProvider } from './cart/context/CartContext';
+import { Analytics } from "@vercel/analytics/next"
 import './globals.css';
 
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CartProvider>
           {children}
         </CartProvider>
+        <Analytics/>
       </body>
     </html>
   );
