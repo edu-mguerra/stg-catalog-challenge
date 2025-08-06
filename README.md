@@ -37,14 +37,15 @@ Utilizei o ChatGPT para auxiliar na lógica e no direcionamento do design, com f
 Deploy funcionando: [https://stg-catalog-challenge-delta.vercel.app/]
 
 # Observações
-O pagamento é simulado; a finalização acontece via WhatsApp.
+O pagamento é simulado; 
+A finalização acontece via WhatsApp.
 
 
 ## Variáveis de Ambiente
 
-# Instale as dependências: npm install
+# Instale as dependências: `npm install`
 
-- Configure variáveis de ambiente para o Supabase (NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY)
+- Configure variáveis de ambiente para o Supabase (`NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
 
 - Rode o projeto: 
   `npm run dev`
