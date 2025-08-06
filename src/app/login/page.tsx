@@ -26,7 +26,9 @@ export default function Login() {
       if (error.message === "Invalid login credentials") {
         alert("Email não encontrado ou senha incorreta. Crie uma conta.");
       } else if (error.message === "Email not confirmed") {
-        alert("Confirme seu e-mail antes de fazer login.");
+        alert(
+          "⚠️ Você ainda não confirmou seu e-mail.\n\nVerifique sua caixa de entrada (ou spam) e clique no link de confirmação para ativar sua conta."
+        );
       } else {
         alert("Erro ao fazer login: " + error.message);
       }
