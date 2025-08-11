@@ -26,10 +26,6 @@ Sistema completo de e-commerce com autenticação, catálogo, carrinho, históri
 
 - WhatsApp API (link wa.me)
 
-- IA para acelerar o desenvolvimento (ex: ChatGPT)
-
-- IA Utilizada:
-Utilizei o ChatGPT para auxiliar na lógica e no direcionamento do design, com foco especial na lógica do carrinho e na resolução de erros via logs. Além disso, o ChatGPT me ajudou a criar os produtos, fornecendo todas as informações necessárias, incluindo imagens.
 
 # Links
 
